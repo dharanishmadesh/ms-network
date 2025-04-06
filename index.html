@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>MS NETWORK WiFi in Coimbatore</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                body {
+                    background: linear-gradient(135deg, #e6ffe6, #ccffff); /* Lighter, more vibrant gradient */
+                    font-family: 'Segoe UI', sans-serif;
+                    color: #333;
+                    line-height: 1.6;
+                }
+        
+                /* Vibrant Header Styling */
+                .bg-light {
+                    background-color: #f0fff0 !important; /* Very light green */
+                    box-shadow: 0 2px 10px rgba(0, 128, 0, 0.15); /* Greenish shadow */
+                    padding-top: 2rem !important;
+                    padding-bottom: 2rem !important;
+                }
+        
+                .text-primary {
+                    color: #3399ff !important; /* Brighter blue */
+                }
+        
+                .text-danger {
+                    color: #ff6666 !important; /* Brighter red */
+                }
+        
+                .text-dark {
+                    color: #1a1a1a !important; /* Deeper dark */
+                }
+        
+                .slow {
+                    --animate-delay: 1s;
+                }
+        
+                .slower {
+                    --animate-delay: 1.5s;
+                }
+        
+                /* Vibrant Logo Styling */
+                .logo-container {
+                    display: inline-block;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 5px rgba(0, 128, 0, 0.2); /* More noticeable green shadow */
+                    background-color: #e0ffe0; /* Light green background for logo container */
+                    padding: 8px;
+                }
+        
+                .logo-container img {
+                    transition: transform 0.3s ease-in-out;
+                }
+        
+                .logo-container:hover img {
+                    transform: scale(1.1);
+                }
+        
+                /* Vibrant Card Styling */
+                .card {
+                    border: none;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 15px rgba(51, 153, 255, 0.15); /* Blueish shadow */
+                    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                    background-color: #f5faff; /* Very light blue */
+                }
+        
+                .card:hover {
+                    transform: translateY(-5px) scale(1.05);
+                    box-shadow: 0 8px 30px rgba(51, 153, 255, 0.2); /* Enhanced blue shadow */
+                }
+        
+                .card-title {
+                    color: #2e8b57; /* Sea green */
+                    margin-bottom: 1rem;
+                }
+        
+                .card-text {
+                    color: #556b2f; /* Dark olive green */
+                    font-size: 0.95rem;
+                }
+        
+                .btn-primary, .btn-info, .btn-warning, .btn-danger {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+                    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+                    color: #fff; /* Ensure white text on vibrant buttons */
+                }
+        
+                .btn-primary:hover, .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                }
+        
+                .btn-primary {
+                    background-color: #00bfff; /* Bright sky blue */
+                    border-color: #00bfff;
+                }
+        
+                .btn-info {
+                    background-color: #00ced1; /* Turquoise */
+                    border-color: #00ced1;
+                }
+        
+                .btn-warning {
+                    background-color: #ffd700; /* Gold */
+                    border-color: #ffd700;
+                    color: #333; /* Dark text on gold */
+                }
+        
+                .btn-danger {
+                    background-color: #ff4500; /* Orange red */
+                    border-color: #ff4500;
+                }
+        
+                /* Vibrant Feature Icons */
+                .feature-icon {
+                    font-size: 2.7rem; /* Slightly larger */
+                    color: #ff8c00; /* Dark orange */
+                    margin-bottom: 1rem;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+                }
+        
+                /* Multi Buttons */
+                .btn-multi {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                }
+        
+                /* CTA Buttons */
+                .cta-buttons button {
+                    margin: 0.6rem 0;
+                    padding: 1rem 2rem; /* More prominent */
+                    font-weight: 600;
+                    border-radius: 10px;
+                }
+        
+                /* Vibrant Pulse Button */
+                .pulse-btn {
+                    animation: pulse-vibrant 1.5s infinite;
+                    border-radius: 12px;
+                    color: #fff;
+                    background-color: #ff6347; /* Tomato */
+                    border: 2px solid #ff6347;
+                }
+        
+                @keyframes pulse-vibrant {
+                    0% { box-shadow: 0 0 0 0 rgba(255, 99, 71, 0.7); }
+                    70% { box-shadow: 0 0 0 15px rgba(255, 99, 71, 0); }
+                    100% { box-shadow: 0 0 0 0 rgba(255, 99, 71, 0); }
+                }
+        
+                /* Vibrant Step Box */
+                .step-box {
+                    background-color: #e0ffff; /* Light cyan */
+                    border-radius: 15px;
+                    box-shadow: 0 6px 25px rgba(0, 191, 255, 0.1); /* Light blue shadow */
+                    padding: 3rem; /* More spacious */
+                    margin-bottom: 3rem;
+                    border-left: 6px solid #00ffff; /* Cyan highlight border */
+                }
+        
+                .step-icon {
+                    font-size: 2rem;
+                    margin-right: 0.8rem;
+                    color: #00ffff; /* Cyan step icon */
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                }
+        
+                .step-title {
+                    font-weight: 700;
+                    color: #4682b4; /* Steel blue */
+                    margin-bottom: 0.6rem;
+                }
+        
+                .step-description {
+                    color: #2f4f4f; /* Dark slate gray */
+                    font-size: 1rem;
+                }
+        
+                /* Vibrant Modal Content */
+                .modal-content {
+                    border-radius: 15px;
+                    box-shadow: 0 8px 30px rgba(51, 153, 255, 0.25); /* Brighter blue shadow */
+                    border: none;
+                }
+        
+                .modal-content img {
+                    width: 140px;
+                    margin: 2rem auto;
+                    border-radius: 50%;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="text-center py-3 bg-light">
+              <style>
+                .logo-container {
+                  display: inline-block;
+                }
+          
+                .logo-container img {
+                  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                }
+          
+                .logo-container:hover img {
+                  transform: scale(1.1);
+                  opacity: 0.9;
+                }
+              </style>
+          
+          <div class="logo-container">
+            <img
+                src="logo.jpg"
+                alt="MS Network Logo"
+                width="100"
+                height="auto"
+                class="mb-2 animate__animated animate__fadeIn"
+            />
+        </div>
+        <h6
+            class="fw-bold text-secondary animate__animated animate__fadeInUp animate__delay-0.2s"
+        >
+            Powered by
+        </h6>
+        <h2
+            class="fw-bold animate__animated animate__bounceInDown text-primary"
+        >
+            MS Network Wifi Connection in
+            <span
+                class="text-dark animate__animated animate__pulse animate__infinite slow"
+                >TIRUPPUR</span
+            >
+        </h2>
+        <h5
+            class="fw-bold text-dark animate__animated animate__fadeInUp animate__delay-0.4s"
+        >
+            Starting at just
+            <span
+                class="text-danger animate__animated animate__flash animate__infinite slower"
+                >₹399/-</span
+            >
+            a month
+        </h5>
+    </h5>
+    <button type="button" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-0.6s" onclick="window.location.href='avaliblity.html'">Check Availability</button>
+    <button type="button" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-0.6s" onclick="window.location.href='plans.html'">Check Plans</button>
+    <button type="button" class="btn btn-success animate__animated animate__fadeInUp animate__delay-0.8s" onclick="window.location.href='contact.html'">Contact Us</button>
+    <button type="button" class="btn btn-info animate__animated animate__fadeInUp animate__delay-1.0s" onclick="window.location.href='getsupport.html'">Get Support</button>
+            <div class="container py-5">
+              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                  <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                    <div class="card-body text-center">
+                      <h5
+                        class="card-title fw-bold text-success animate__animated animate__headShake animate__delay-1s animate__infinite"
+                      >
+                        Super star 300
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹749</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.2s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 50 Mbps till 300 GB, 2
+                        Mbps beyond & Free Hotstar Premium
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.4s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> NA
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.6s"
+                      >
+                        <strong class="text-muted">Static IP:</strong> NA
+                      </p>
+                      <button
+                        class="btn btn-primary btn-sm mt-3 animate__animated animate__slideInUp animate__delay-2.8s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal1"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div
+                    class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s"
+                  >
+                    <div class="card-body text-center">
+                      <h5
+                        class="card-title fw-bold text-success animate__animated animate__headShake animate__delay-1.5s animate__infinite"
+                      >
+                        600 GB CUL
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.5s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹849</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.7s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 50 Mbps till 600 GB, 2
+                        Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.9s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> NA
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.1s"
+                      >
+                        <strong class="text-muted">Static IP:</strong> NA
+                      </p>
+                      <button
+                        class="btn btn-primary btn-sm mt-3 animate__animated animate__slideInUp animate__delay-3.3s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal2"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                    <div class="card-body text-center">
+                      <h5
+                        class="card-title fw-bold text-success animate__animated animate__headShake animate__delay-2s animate__infinite"
+                      >
+                        Super star 500
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹949</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.2s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 50 Mbps till 500 GB, 2
+                        Mbps beyond & Free Hotstar Premium
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.4s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> NA
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.6s"
+                      >
+                        <strong class="text-muted">Static IP:</strong> NA
+                      </p>
+                      <button
+                        class="btn btn-primary btn-sm mt-3 animate__animated animate__slideInUp animate__delay-3.8s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal3"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                    <div class="card-body text-center">
+                      <h5
+                        class="card-title fw-bold text-info animate__animated animate__headShake animate__delay-1s animate__infinite"
+                      >
+                        750GB
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹1277</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.2s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 100 Mbps till 750 GB, 2
+                        Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.4s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> Unlimited Calls
+                        (India)
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.6s"
+                      >
+                        <strong class="text-muted">Static IP:</strong> ₹2000 p.a
+                      </p>
+                      <button
+                        class="btn btn-info btn-sm mt-3 animate__animated animate__slideInUp animate__delay-2.8s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal4"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div
+                    class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s"
+                  >
+                    <div class="card-body text-center">
+                      <h5
+                        class="card-title fw-bold text-info animate__animated animate__headShake animate__delay-1.5s animate__infinite"
+                      >
+                        33 GB
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.5s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹1999</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.7s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 100 Mbps till 33
+                        GB/day, 4 Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.9s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> Unlimited Calls
+                        (India)
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.1s"
+                      >
+                        <strong class="text-muted">Static IP:</strong> ₹1800 p.a
+                      </p>
+                      <button
+                        class="btn btn-info btn-sm mt-3 animate__animated animate__slideInUp animate__delay-3.3s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal5"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                    <div class="card-body text-center">
+                      <h5
+                        class="card-title fw-bold text-info animate__animated animate__headShake animate__delay-2s animate__infinite"
+                      >
+                        40 GB
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹2499</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.2s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 100 Mbps till 40
+                        GB/day, 4 Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.4s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> Unlimited Calls
+                        (India)
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.6s"
+                      >
+                        <strong class="text-muted">Static IP:</strong> ₹1800 p.a
+                      </p>
+                      <button
+                        class="btn btn-info btn-sm mt-3 animate__animated animate__slideInUp animate__delay-3.8s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal6"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div
+                    class="card h-100 shadow-sm animate__animated animate__fadeInUp"
+                  >
+                    <div class="card-body text-center bg-warning bg-opacity-10">
+                      <h5
+                        class="card-title fw-bold text-warning animate__animated animate__headShake animate__delay-1s animate__infinite"
+                      >
+                        55 GB
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹4499</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.2s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 100 Mbps till 55
+                        GB/day, 4 Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.4s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> Unlimited Calls
+                        (India)
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.6s"
+                      >
+                        <strong class="text-muted">Static IP:</strong>
+                        <span
+                          class="fw-bold animate__animated animate__heartBeat animate__delay-3s animate__infinite"
+                          >One Free</span
+                        >
+                      </p>
+                      <button
+                        class="btn btn-warning btn-sm mt-3 animate__animated animate__slideInUp animate__delay-2.8s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal7"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div
+                    class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s"
+                  >
+                    <div class="card-body text-center bg-warning bg-opacity-10">
+                      <h5
+                        class="card-title fw-bold text-warning animate__animated animate__headShake animate__delay-1.5s animate__infinite"
+                      >
+                        80 GB
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.5s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹5999</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.7s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 100 Mbps till 80
+                        GB/day, 6 Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.9s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> Unlimited Calls
+                        (India)
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.1s"
+                      >
+                        <strong class="text-muted">Static IP:</strong>
+                        <span
+                          class="fw-bold animate__animated animate__heartBeat animate__delay-3.5s animate__infinite"
+                          >One Free</span
+                        >
+                      </p>
+                      <button
+                        class="btn btn-warning btn-sm mt-3 animate__animated animate__slideInUp animate__delay-3.3s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal8"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                    <div class="card-body text-center bg-warning bg-opacity-10">
+                      <h5
+                        class="card-title fw-bold text-warning animate__animated animate__headShake animate__delay-2s animate__infinite"
+                      >
+                        120 GB
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹9999</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.2s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 100 Mbps till 120
+                        GB/day, 8 Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.4s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> Unlimited Calls
+                        (India)
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-3.6s"
+                      >
+                        <strong class="text-muted">Static IP:</strong>
+                        <span
+                          class="fw-bold animate__animated animate__heartBeat animate__delay-4s animate__infinite"
+                          >One Free</span
+                        >
+                      </p>
+                      <button
+                        class="btn btn-warning btn-sm mt-3 animate__animated animate__slideInUp animate__delay-3.8s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal9"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                    <div class="card-body text-center bg-danger bg-opacity-10 text-dark">
+                      <h5
+                        class="card-title fw-bold text-danger animate__animated animate__headShake animate__delay-1s animate__infinite"
+                      >
+                        170 GB
+                      </h5>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2s"
+                      >
+                        <strong class="text-muted">FMC:</strong>
+                        <span class="fw-bold">₹16999</span>
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.2s"
+                      >
+                        <strong class="text-muted">FUP:</strong> Upto 100 Mbps till 170
+                        GB/day, 10 Mbps beyond
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.4s"
+                      >
+                        <strong class="text-muted">Voice Calls:</strong> Unlimited Calls
+                        (India)
+                      </p>
+                      <p
+                        class="card-text animate__animated animate__fadeIn animate__delay-2.6s"
+                      >
+                        <strong class="text-muted">Static IP:</strong>
+                        <span
+                          class="fw-bold animate__animated animate__heartBeat animate__delay-3s animate__infinite"
+                          >One Free</span
+                        >
+                      </p>
+                      <button
+                        class="btn btn-danger btn-sm mt-3 animate__animated animate__slideInUp animate__delay-2.8s"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planDetailsModal10"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal1"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel1"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel1">
+                      Super star 300 - Details
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers high-speed internet with a FUP of 300 GB and includes
+                      a free Hotstar Premium subscription.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 50 Mbps</li>
+                      <li>Data Limit: 300 GB</li>
+                      <li>Post-FUP Speed: 2 Mbps</li>
+                      <li>Voice Calls: Not Applicable</li>
+                      <li>Static IP: Not Applicable</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal2"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel2"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel2">600 GB CUL - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a larger data limit with a FUP of 600 GB.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 50 Mbps</li>
+                      <li>Data Limit: 600 GB</li>
+                      <li>Post-FUP Speed: 2 Mbps</li>
+                      <li>Voice Calls: Not Applicable</li>
+                      <li>Static IP: Not Applicable</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal3"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel3"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel3">Super star 500 - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a FUP of 500 GB and includes a free Hotstar Premium
+                      subscription.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 50 Mbps</li>
+                      <li>Data Limit: 500 GB</li>
+                      <li>Post-FUP Speed: 2 Mbps</li>
+                      <li>Voice Calls: Not Applicable</li>
+                      <li>Static IP: Not Applicable</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal4"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel4"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel4">750GB - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a higher speed and a larger data limit.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 100 Mbps</li>
+                      <li>Data Limit: 750 GB</li>
+                      <li>Post-FUP Speed: 2 Mbps</li>
+                      <li>Voice Calls: Unlimited (India)</li>
+                      <li>Static IP: ₹2000 p.a</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal5"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel5"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel5">33 GB - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a daily data limit.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 100 Mbps</li>
+                      <li>Data Limit: 33 GB/day</li>
+                      <li>Post-FUP Speed: 4 Mbps</li>
+                      <li>Voice Calls: Unlimited (India)</li>
+                      <li>Static IP: ₹1800 p.a</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal6"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel6"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel6">40 GB - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a daily data limit.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 100 Mbps</li>
+                      <li>Data Limit: 40 GB/day</li>
+                      <li>Post-FUP Speed: 4 Mbps</li>
+                      <li>Voice Calls: Unlimited (India)</li>
+                      <li>Static IP: ₹1800 p.a</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal7"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel7"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel7">55 GB - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a daily data limit and includes a free static IP.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 100 Mbps</li>
+                      <li>Data Limit: 55 GB/day</li>
+                      <li>Post-FUP Speed: 4 Mbps</li>
+                      <li>Voice Calls: Unlimited (India)</li>
+                      <li>Static IP: One Free</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal8"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel8"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel8">80 GB - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a higher daily data limit and includes a free static
+                      IP.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 100 Mbps</li>
+                      <li>Data Limit: 80 GB/day</li>
+                      <li>Post-FUP Speed: 6 Mbps</li>
+                      <li>Voice Calls: Unlimited (India)</li>
+                      <li>Static IP: One Free</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div
+              class="modal fade"
+              id="planDetailsModal9"
+              tabindex="-1"
+              aria-labelledby="planDetailsModalLabel9"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="planDetailsModalLabel9">120 GB - Details</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      This plan offers a very high daily data limit and includes a free
+                      static IP.
+                    </p>
+                    <ul>
+                      <li>Speed: Up to 100 Mbps</li>
+                      <li>Data Limit: 120 GB/day</li>
+                      <li>Post-FUP Speed: 8 Mbps</li>
+                      <li>Voice Calls: Unlimited (India)</li>
+                      <li>Static IP: One Free</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+           <!-- Bootstrap 5 Modal -->
+<div
+  class="modal fade"
+  id="planDetailsModal10"
+  tabindex="-1"
+  aria-labelledby="planDetailsModalLabel10"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="planDetailsModalLabel10">170 GB - Details</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p>
+          This plan offers the highest daily data limit and includes a free
+          static IP.
+        </p>
+        <ul>
+          <li>Speed: Up to 100 Mbps</li>
+          <li>Data Limit: 170 GB/day</li>
+          <li>Post-FUP Speed: 10 Mbps</li>
+          <li>Voice Calls: Unlimited (India)</li>
+          <li>Static IP: One Free</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Steps Form Section -->
+<div class="container mb-5">
+  <h4 class="text-center mb-4">Get Wi-Fi connection</h4>
+
+  <!-- Step 1 -->
+  <div class="step-box mb-4">
+    <h5><i class="fa fa-user step-icon"></i> STEP 1: Add Contact Details</h5>
+    <div class="row g-3 mt-2">
+      <div class="col-md-6">
+        <input
+          type="tel"
+          id="contactNumber"
+          class="form-control"
+          placeholder="Ex: 9810012345"
+        />
+      </div>
+      <div class="col-md-6">
+        <input
+          type="text"
+          id="contactName"
+          class="form-control"
+          placeholder="Ex: Rahul Kumar"
+        />
+      </div>
+      <div class="col-12">
+        <small class="text-muted">It will be used to contact you for installation</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step-box">
+    <h5><i class="fa fa-map-marker-alt step-icon"></i> STEP 2: Add Installation Address</h5>
+    <div class="row g-3 mt-2">
+      <div class="col-md-6">
+        <input
+          type="text"
+          id="address"
+          class="form-control"
+          placeholder="Address"
+        />
+      </div>
+      <div class="col-md-6">
+        <input
+          type="text"
+          id="pincode"
+          class="form-control"
+          placeholder="Pincode"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="text-center">
+        <button class="btn btn-danger pulse-btn" onclick="sendWhatsAppMessage()">Submit & Get Offer</button>
+    </div>
+</div>
+
+<script>
+function sendWhatsAppMessage() {
+  const contactNumber = document.getElementById('contactNumber').value;
+  const contactName = document.getElementById('contactName').value;
+  const address = document.getElementById('address').value;
+  const pincode = document.getElementById('pincode').value;
+
+  // Replace with the actual plan details you want to send.
+  const planDetails = "I am interested in the MS Network WiFi plan. My details are:\n" +
+                      "Name: " + contactName + "\n" +
+                      "Phone: " + contactNumber + "\n" +
+                      "Address: " + address + ", " + pincode;
+
+  const whatsappMessage = encodeURIComponent(planDetails);
+  // Using the provided number: 9787910221 (assuming it's an Indian number, so country code 91 is added)
+  const whatsappURL = "https://wa.me/919787910221?text=" + whatsappMessage;
+
+  window.open(whatsappURL, '_blank');
+}
+</script>
+
+  <!-- Modal Popup -->
+  <div class="modal fade" id="benefitModal" tabindex="-1" aria-labelledby="benefitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="fw-bold mt-3">You get <span class="text-primary">22+ free OTTs</span> with your new Airtel Wi-Fi</h5>
+        <p class="text-muted">Are you sure you want to miss out on benefits?</p>
+        <img src="https://i.ibb.co/CVMCKZj/ott.png" alt="OTT Icons">
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Lose Benefits</button>
+          <button class="btn btn-danger">Get Benefits</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

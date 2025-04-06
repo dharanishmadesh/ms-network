@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Availability - MS Network WiFi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f8ff, #e0ffff); /* Light and airy background */
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .availability-hero {
+            background: url('availability-hero.jpg') center/cover no-repeat; /* Replace with your image */
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .availability-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+        }
+
+        .availability-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .availability-form-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .availability-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .form-control:focus {
+            border-color: #007bff; /* Bootstrap primary color */
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-primary {
+            border-radius: 8px;
+            padding: 12px 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        #availabilityResult {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            text-align: center;
+        }
+
+        .available {
+            color: #28a745; /* Bootstrap success color */
+            font-weight: bold;
+        }
+
+        .unavailable {
+            color: #dc3545; /* Bootstrap danger color */
+            font-weight: bold;
+        }
+
+        /* Animations */
+        .floating-graphic {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 6s infinite alternate ease-in-out;
+        }
+
+        .floating-graphic.one {
+            top: 10%;
+            left: 15%;
+            width: 80px;
+        }
+
+        .floating-graphic.two {
+            bottom: 15%;
+            right: 10%;
+            width: 120px;
+        }
+
+        .floating-graphic.three {
+            top: 30%;
+            right: 20%;
+            width: 60px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="availability-hero">
+        <div class="floating-graphic one animate__animated animate__fadeInDown">
+            <img src="avaliblityimg\router_18474622.png" alt="WiFi Icon" class="img-fluid">
+        </div>
+        <div class="floating-graphic two animate__animated animate__fadeInUp animate__delay-1s">
+            <img src="avaliblityimg\modem_3607052.png" alt="WiFi Icon" class="img-fluid">
+        </div>
+        <div class="floating-graphic three animate__animated animate__fadeInRight">
+            <img src="avaliblityimg/business-plan_9577437.png" alt="WiFi Icon" class="img-fluid">
+        </div>
+        <div class="container availability-hero-content animate__animated animate__fadeIn">
+            <h1 class="display-4 fw-bold mb-3">Check Our Availability</h1>
+            <p class="lead">Enter your address to see if MS Network WiFi is available in your area (currently serving Tiruppur and surrounding regions).</p>
+        </div>
+    </div>
+
+    <div class="availability-form-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 animate__animated animate__fadeInUp">
+                    <div class="availability-form">
+                        <h2 class="text-center mb-4">Enter Your Location</h2>
+                        <form id="checkAvailabilityForm">
+                            <div class="mb-3">
+                                <label for="street" class="form-label">Street Address</label>
+                                <input type="text" class="form-control" id="street" placeholder="Enter your street address" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="zip" class="form-label">Zip Code</label>
+                                <input type="text" class="form-control" id="zip" placeholder="Enter your zip code" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Check Availability</button>
+                        </form>
+                        <div id="availabilityResult" class="mt-4 d-none">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-3 text-center">
+        <p>&copy; 2025 MS Network WiFi. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const availabilityForm = document.getElementById('checkAvailabilityForm');
+            const availabilityResultDiv = document.getElementById('availabilityResult');
+
+            availabilityForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const street = document.getElementById('street').value.trim().toLowerCase();
+                const city = document.getElementById('city').value.trim().toLowerCase();
+                const zip = document.getElementById('zip').value.trim();
+
+                // Define the service area (Tiruppur surrounding)
+                const serviceCities = ['tiruppur', 'kangayam', 'palladam', 'avanashi', 'udumalpet']; // Add more surrounding cities as needed
+                const serviceZipCodes = ['641604', '641605', '641601', '641602', '641603']; // Add relevant zip codes
+
+                let isAvailable = false;
+
+                // Basic check: City or Zip Code matches
+                if (serviceCities.includes(city) || serviceZipCodes.includes(zip)) {
+                    // For a more accurate check, you might need more specific data (e.g., street-level availability)
+                    // For this simplified example, a match in city or zip within the Tiruppur region is considered available.
+                    isAvailable = true;
+                }
+
+                availabilityResultDiv.classList.remove('d-none');
+                availabilityResultDiv.innerHTML = ''; // Clear previous results
+
+                if (isAvailable) {
+                    availabilityResultDiv.innerHTML = `<p class="available"><i class="fas fa-check-circle"></i> Great news! MS Network WiFi is <span class="fw-bold">likely available</span> at your address within the Tiruppur region.</p>
+                                                       <p>To confirm the exact availability and view our plans, please <a href='contact.html'>contact us</a> with your full address.</p>
+                                                       <p>Ready to inquire? <a href='contact.html'>Contact us</a> to get started.</p>`;
+                } else {
+                    availabilityResultDiv.innerHTML = `<p class="unavailable"><i class="fas fa-times-circle"></i> Sorry, MS Network WiFi is currently <span class="fw-bold">unavailable</span> at the address provided. Our current service area is primarily Tiruppur and surrounding regions.</p>
+                                                         <p>We are continuously expanding our network. Please check back later or <a href='contact.html'>contact us</a> to inquire about future availability in your specific area.</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
